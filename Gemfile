@@ -19,7 +19,8 @@ group :development do
 
   # deployment
   gem 'airbrussh'
-  gem 'capistrano-bundler'
   gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
   gem 'capistrano-rbenv'
 end
