@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'grape'
-gem 'grape-entity'
+gem 'activerecord'
 gem 'pg'
-gem 'rack', '~> 2.0.0.alpha'
+gem 'rake'
+gem 'sinatra'
+gem 'sinatra-activerecord'
+gem 'sinatra-contrib'
 
 group :production do
   gem 'unicorn'
@@ -12,6 +14,7 @@ end
 group :development do
   gem 'gemsurance'
   gem 'pry'
+  gem 'rerun'
 
   # deployment
   gem 'airbrussh'
