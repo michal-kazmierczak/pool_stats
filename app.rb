@@ -1,3 +1,5 @@
+require 'sinatra/base'
+
 class App < Sinatra::Base
   before do
     content_type :json
