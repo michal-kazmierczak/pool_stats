@@ -1,3 +1,7 @@
+require 'sinatra/base'
+require 'sinatra/activerecord'
 require './app'
 
-run App
+Dir.glob('./{app/*,api}/*.rb').each { |file| require file }
+
+run Rack::Cascade.new [Home]
