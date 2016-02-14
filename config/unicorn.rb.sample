@@ -1,0 +1,13 @@
+app_dir = "/path/to/app"
+shared_dir = "#{app_dir}/shared"
+
+working_directory "#{app_dir}/current"
+pid "#{shared_dir}/pids/unicorn.pid"
+stderr_path "#{shared_dir}/log/unicorn.stderr.log"
+stdout_path "#{shared_dir}/log/unicorn.stdout.log"
+
+listen "#{shared_dir}/sockets/unicorn.sock"
+
+worker_processes 2
+preload_app true
+timeout 60
