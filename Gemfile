@@ -12,6 +12,7 @@ group :production do
 end
 
 group :development do
+  gem 'annotate'
   gem 'gemsurance'
   gem 'pry'
   gem 'rerun'

@@ -16,6 +16,9 @@ GEM
       tzinfo (~> 1.1)
     airbrussh (0.8.0)
       sshkit (>= 1.6.1, != 1.7.0)
+    annotate (2.7.0)
+      activerecord (>= 3.2, < 6.0)
+      rake (~> 10.4)
     arel (6.0.3)
     backports (3.6.8)
     builder (3.2.2)
@@ -99,6 +102,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   airbrussh
+  annotate
   capistrano
   capistrano-bundler
   capistrano-rbenv
