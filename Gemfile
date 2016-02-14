@@ -10,7 +10,12 @@ group :production do
 end
 
 group :development do
+  gem 'gemsurance'
+  gem 'pry'
+
+  # deployment
+  gem 'airbrussh'
+  gem 'capistrano-bundler'
   gem 'capistrano'
   gem 'capistrano-rbenv'
-  gem 'capistrano-bundler'
 end
