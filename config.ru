@@ -1,4 +1,3 @@
-require 'sinatra/activerecord'
 require './app'
 
 Dir.glob('./{app/*,api}/*.rb').each { |file| require file }
