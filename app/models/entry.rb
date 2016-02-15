@@ -11,4 +11,7 @@
 #
 
 class Entry < ActiveRecord::Base
+  validates :swimmers, presence: true, numericality: true
+  validates :date, presence: true
+  validates :device_id, length: { maximum: 40 }
 end
