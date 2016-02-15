@@ -7,9 +7,14 @@ class App < Sinatra::Base
 
   configure do
     enable :logging
+    set :show_exceptions, false if production?
   end
 
   before do
     content_type :json
+  end
+
+  error ActiveRecord::UnknownAttributeError do |e|
+    halt 422, { message: e.message }.to_json
   end
 end
