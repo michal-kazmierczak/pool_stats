@@ -9,6 +9,14 @@ set :linked_dirs, %w(log tmp/pids)
 set :keep_releases, 5
 set :rbenv_ruby, File.read('.ruby-version').strip
 
+namespace :db do
+  task :migrate do
+    on roles(:app) do
+      execute "cd #{current_path} && RACK_ENV=#{fetch(:stage)} $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate"
+    end
+  end
+end
+
 namespace :unicorn do
   task :restart do
     on roles(:app) do
@@ -17,4 +25,5 @@ namespace :unicorn do
   end
 end
 
+after "deploy", "db:migrate"
 after "deploy", "unicorn:restart"

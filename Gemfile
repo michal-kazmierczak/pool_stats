@@ -21,6 +21,5 @@ group :development do
   gem 'airbrussh'
   gem 'capistrano'
   gem 'capistrano-bundler'
-  gem 'capistrano-rails'
   gem 'capistrano-rbenv'
 end
