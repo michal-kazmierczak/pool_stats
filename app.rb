@@ -7,9 +7,6 @@ class App < Sinatra::Base
 
   configure do
     enable :logging
-    file = File.new("#{settings.root}/log/#{settings.environment}.log", 'a+')
-    file.sync = true
-    use Rack::CommonLogger, file
   end
 
   before do
