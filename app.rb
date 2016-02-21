@@ -1,9 +1,9 @@
-require "sinatra/base"
-require "sinatra/activerecord"
-require "pry" if Sinatra::Base.development?
+require "./config/initializer"
 
 class App < Sinatra::Base
   register Sinatra::ActiveRecordExtension
+
+  Dir.glob('./{app/*,api}/*.rb').each { |file| require file }
 
   configure do
     enable :logging
