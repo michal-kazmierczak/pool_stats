@@ -10,10 +10,7 @@ class Home < App
 
   get '/on/:day_of_week' do
     day_of_week_id = Date::DAYNAMES.index(params["day_of_week"].capitalize)
-
-    if day_of_week_id.nil?
-      halt 422, { message: 'Unknown day of week' }.to_json
-    end
+    halt 422, { message: 'Unknown day of week' }.to_json if day_of_week_id.nil?
 
     Entry.where(day_of_week: day_of_week_id).to_json
   end
