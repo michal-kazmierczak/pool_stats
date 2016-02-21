@@ -1,3 +1,5 @@
 config/database.yml
 config/secrets.yml
+gemsurance_report.html
 log/*
+tmp/*
