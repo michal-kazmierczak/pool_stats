@@ -8,6 +8,16 @@ class Home < App
     Entry.where(day_of_week: today).to_json
   end
 
+  get '/on/:day_of_week' do
+    day_of_week_id = Date::DAYNAMES.index(params["day_of_week"].capitalize)
+
+    if day_of_week_id.nil?
+      halt 422, { message: 'Unknown day of week' }.to_json
+    end
+
+    Entry.where(day_of_week: day_of_week_id).to_json
+  end
+
   post '/' do
     entry = Entry.new(params)
 
