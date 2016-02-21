@@ -6,6 +6,7 @@ gem 'rake'
 gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'sinatra-contrib'
+gem 'slack-notifier'
 
 group :production do
   gem 'unicorn'
