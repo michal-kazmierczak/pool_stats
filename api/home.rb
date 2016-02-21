@@ -13,4 +13,13 @@ class Home < App
       halt 422, entry.errors.to_json
     end
   end
+
+  delete '/:id' do
+    if AppConfig["delete_tokens"].exclude?(params["token"])
+      halt 403, { message: "Wrong token" }.to_json
+    end
+
+    entry = Entry.find(params["id"])
+    entry.destroy.to_json
+  end
 end
