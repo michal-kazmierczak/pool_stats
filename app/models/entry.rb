@@ -21,7 +21,6 @@ class Entry < ActiveRecord::Base
   private
 
   def assign_day_of_week
-    binding.pry
     self.day_of_week = date.wday
   end
 end
