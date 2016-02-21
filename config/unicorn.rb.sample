@@ -9,5 +9,4 @@ stdout_path "#{shared_dir}/log/unicorn.stdout.log"
 listen "#{shared_dir}/sockets/unicorn.sock"
 
 worker_processes 2
-preload_app true
 timeout 60
