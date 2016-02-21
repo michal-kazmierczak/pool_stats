@@ -17,4 +17,12 @@ class App < Sinatra::Base
   error ActiveRecord::UnknownAttributeError do |e|
     halt 422, { message: e.message }.to_json
   end
+
+  error ActiveRecord::RecordNotFound do
+    halt 404, { message: "resource not found" }.to_json
+  end
+
+  not_found do
+    halt 404, { message: "endpoint not found" }.to_json
+  end
 end
