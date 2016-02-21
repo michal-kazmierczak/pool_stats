@@ -5,9 +5,9 @@ class App < Sinatra::Base
 
   Dir.glob('./{app/*,api}/*.rb').each { |file| require file }
 
-  configure do
+  configure :production do
     enable :logging
-    set :show_exceptions, false if production?
+    set :show_exceptions, false
   end
 
   before do
