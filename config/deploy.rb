@@ -3,7 +3,7 @@ lock '3.4.0'
 set :application, 'pool_stats'
 set :repo_url, 'git@github.com:michal-kazmierczak/pool_stats.git'
 
-set :linked_files, %w(config/unicorn.rb config/database.yml)
+set :linked_files, %w(config/unicorn.rb config/database.yml config/secrets.yml)
 set :linked_dirs, %w(log tmp/pids)
 
 set :keep_releases, 5
