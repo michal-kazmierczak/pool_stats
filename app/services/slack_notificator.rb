@@ -10,6 +10,6 @@ class SlackNotificator
   end
 
   def call
-    @notifier.ping(message)
+    notifier.ping(message)
   end
 end
