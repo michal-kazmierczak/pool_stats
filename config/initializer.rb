@@ -1,3 +1,5 @@
+require "rubygems"
+require "bundler/setup"
 require "sinatra/base"
 require "sinatra/activerecord"
 require "pry" if Sinatra::Base.development? || Sinatra::Base.test?
