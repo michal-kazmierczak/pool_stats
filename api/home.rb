@@ -3,6 +3,11 @@ class Home < App
     Entry.all.to_json
   end
 
+  get '/today' do
+    today = DateTime.current.wday
+    Entry.where(day_of_week: today).to_json
+  end
+
   post '/' do
     entry = Entry.new(params)
 
