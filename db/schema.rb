@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160214220826) do
+ActiveRecord::Schema.define(version: 20160221021854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(version: 20160214220826) do
     t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "day_of_week", null: false
   end
+
+  add_index "entries", ["day_of_week"], name: "index_entries_on_day_of_week", using: :btree
 
 end
