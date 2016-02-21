@@ -1,6 +1,6 @@
 require "sinatra/base"
 require "sinatra/activerecord"
-require "pry"
+require "pry" if Sinatra::Base.development? || Sinatra::Base.test?
 require "slack-notifier"
 begin
   AppConfig = YAML.load_file("./config/secrets.yml")[ENV["RACK_ENV"] || "development"]
