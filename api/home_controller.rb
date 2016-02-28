@@ -1,4 +1,4 @@
-class Home < App
+class HomeController < App
   get '/' do
     Entry.all.to_json
   end
