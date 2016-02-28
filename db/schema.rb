@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221021854) do
+ActiveRecord::Schema.define(version: 20160228115128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,5 +26,13 @@ ActiveRecord::Schema.define(version: 20160221021854) do
   end
 
   add_index "entries", ["day_of_week"], name: "index_entries_on_day_of_week", using: :btree
+
+  create_table "opening_hours", force: :cascade do |t|
+    t.integer  "day_of_week"
+    t.time     "open_time"
+    t.time     "close_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
