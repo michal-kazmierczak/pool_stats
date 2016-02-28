@@ -1,3 +1,3 @@
 require './app'
 
-run Rack::Cascade.new [HomeController]
+run Rack::Cascade.new [HomeController, OpeningHoursController]
