@@ -5,7 +5,7 @@ class SlackNotificator
     @message = message
     @notifier = Slack::Notifier.new(AppConfig["slack"]["webhook_url"],
       channel: AppConfig["slack"]["channel"],
-      username: "pool-stats",
+      username: AppConfig["slack"]["app_name"],
       icon_emoji: ":swimmer:")
   end
 
