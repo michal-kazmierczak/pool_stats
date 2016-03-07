@@ -17,12 +17,12 @@ ActiveRecord::Schema.define(version: 20160228115128) do
   enable_extension "plpgsql"
 
   create_table "entries", force: :cascade do |t|
-    t.integer  "swimmers"
     t.string   "device_id"
     t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "day_of_week", null: false
+    t.integer  "day_of_week",             null: false
+    t.integer  "swimmers",    default: 2
   end
 
   add_index "entries", ["day_of_week"], name: "index_entries_on_day_of_week", using: :btree
