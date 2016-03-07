@@ -20,7 +20,7 @@ end
 namespace :unicorn do
   task :restart do
     on roles(:app) do
-      execute "/etc/init.d/unicorn_pool_stats restart"
+      execute "/etc/init.d/unicorn_#{fetch(:application)} restart"
     end
   end
 end
